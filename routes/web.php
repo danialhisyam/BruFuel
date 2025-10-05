@@ -33,10 +33,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
     Route::view('/users', 'admin.manage-user')->name('users.index');
     Route::view('/orders', 'admin.manage-order')->name('order.index');
-
-
     Route::view('/drivers', 'admin.manage-drivers')->name('drivers.index');
-    Route::view('/payments', 'admin.payment')->name('payment.index');
+    Route::view('/payment', 'admin.payment')->name('admin.payment');
 });
 
 
