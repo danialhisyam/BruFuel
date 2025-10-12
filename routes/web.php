@@ -1,5 +1,4 @@
 <?php
-
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -8,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 })->name('home');
 
 Route::view('dashboard', 'dashboard')
@@ -23,20 +22,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 
 // PUBLIC admin routes
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::view('/login', 'admin.login')->name('login'); // NOT 'LoginPageAdmin.php'
+
 });
-
-
 // PROTECTED admin routes
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    //FOR LOGIN PAGE
+    Route::view('/login', 'admin.login')->name('login');
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
     Route::view('/users', 'admin.manage-user')->name('users.index');
     Route::view('/orders', 'admin.manage-order')->name('order.index');
-    Route::view('/drivers', 'admin.manage-drivers')->name('drivers.index');
-    Route::view('/payment', 'admin.payment')->name('admin.payment');
-});
 
+    Route::view('/drivers', 'admin.manage-drivers')->name('drivers.index');
+    Route::view('/payments', 'admin.payment')->name('payments.index');
+});
 
     Route::get('settings/two-factor', TwoFactor::class)
         ->middleware(
@@ -48,6 +46,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
             ),
         )
         ->name('two-factor.show');
+
+// Landing page (role selection portal)
+Route::get('/', function () {
+    return view('ComapnySelectection'); // your blade file e.g. resources/views/role-selection.blade.php
 });
 
-require __DIR__.'/auth.php';
+Route::middleware(['auth'])->prefix('testing')->name('testing.')->group(function () {
+    Route::view('/testing', 'Testing.Test1');
+});
+    require __DIR__.'/auth.php';
