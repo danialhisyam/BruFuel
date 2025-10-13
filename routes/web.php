@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-return view('welcome');
-})->name('home');
+return view('dashboard');
+})->name('welcome');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 // PROTECTED admin routes
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
     //FOR LOGIN PAGE
     Route::view('/login', 'admin.login')->name('login');
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
@@ -52,7 +52,7 @@ Route::get('/', function () {
     return view('ComapnySelectection'); // your blade file e.g. resources/views/role-selection.blade.php
 });
 
-Route::middleware(['auth'])->prefix('testing')->name('testing.')->group(function () {
+Route::prefix('testing')->name('testing.')->group(function () {
     Route::view('/testing', 'Testing.Test1');
 });
     require __DIR__.'/auth.php';

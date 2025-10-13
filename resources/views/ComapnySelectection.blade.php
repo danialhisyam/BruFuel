@@ -196,13 +196,13 @@
                 // Simulate redirection (remove in production)
                 switch(selectedRole) {
                     case 'admin':
-                        window.location.href = 'admin/login';
+                        window.location.href = '/admin/login';
                         break;
                     case 'customer':
-                        window.location.href = 'customer';
+                        window.location.href = '/admin/login';
                         break;
                     case 'driver':
-                        window.location.href = 'driver';
+                        window.location.href = '/admin/login';
                         break;
                 }
             } else {
