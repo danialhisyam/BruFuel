@@ -78,6 +78,7 @@
             <a href="/" class="home-btn">Dashboard</a>
             <a href="/" class="home-btn">Order</a>
             <a href="/faq" class="home-btn">FAQ</a>
+            
         </header>
         <div style="background: #08073d; min-height: 100vh;">
         <div style="text-align: center; padding: 2rem;">
@@ -126,7 +127,7 @@
     <br>
 <footer>
     <div style="text-align: center; padding: 1rem; background: #323155; color: #ffff; font-size: 14px;">
-        &copy; 2024 BruFuel. All rights reserved.
+        &copy; 2025 BruFuel. All rights reserved.
     </div>
 </footer>
 </html>
