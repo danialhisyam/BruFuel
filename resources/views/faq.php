@@ -9,12 +9,12 @@
         <style>
             body {
                 margin: 0;
-                background: #0a2540;
+                background: #08073d;
                 font-family: "Poppins", sans-serif;
             }
             header {
-                background: #e3e3e0;
-                color: #1b1b18;
+                background: #323155;
+                color: #ffff;
                 padding: 1rem;
                 font-size: 1.1rem;
                 display: flex;
@@ -29,7 +29,7 @@
                 font-family: "Poppins", sans-serif;
             }
             .home-btn {
-                background: #1b1b18;
+                background: #323155;
                 color: #fff;
                 border: none;
                 padding: 0.5rem 1rem;
@@ -43,6 +43,22 @@
             }
             .home-btn:hover {
                 background: #ece778;
+            }
+            .customerservice-btn {
+                background: #323155;
+                color: #ffff;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                margin-left: auto;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: background 0.2s;
+                font-family: "Poppins", sans-serif;
+            }
+            .customerservice-btn:hover {
+                background: #d4d454;
             }
             .faq-title {
                 font-weight: bold;
@@ -59,13 +75,15 @@
     <body>
         <header>
             <span class="brufuel-title">BruFuel</span>
-            <a href="{{ route('home') }}" class="home-btn">Home</a>
-            <a href="{{ route('faq') }}" class="home-btn">FAQ</a>
+            <a href="/" class="home-btn">Dashboard</a>
+            <a href="/" class="home-btn">Order</a>
+            <a href="/faq" class="home-btn">FAQ</a>
         </header>
         <div style="background: #08073d; min-height: 100vh;">
         <div style="text-align: center; padding: 2rem;">
             <h1 class="faq-title" style="color: #fff;">Frequently Asked Questions (FAQ)</h1>
             <p style="color: #ddd; font-size: 16px; max-width: 600px; margin: 0 auto;">Have a question? Check our FAQ down below or contact our Customer Service.</p>
+            <br>
         <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; padding-top: 2rem;">
             <div style="background: #323155; color: #ffff; border-radius: 8px; padding: 1.5rem 2rem; width: 80%; max-width: 600px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
                 <span style="font-weight: bold; font-size: 20px;">What type of fuel does BruFuel provide?</span>
@@ -96,6 +114,19 @@
                 <div style="font-size: 16px; margin-top: 0.5rem;">We accept various payment methods including credit/debit cards, mobile payments (like Apple Pay and Pocket), and cash on delivery.</div>
             </div>
         </div>
+        <br>
+        <br>
+        <div>
+            <p style="color: #ffff">For further assistance, please contact our Customer Service here.</p>
+            <a href="/customerservice" class="customerservice-btn">Contact Customer Service</a>
+        </div>
     </div>
     </body>
+    <br>
+    <br>
+<footer>
+    <div style="text-align: center; padding: 1rem; background: #323155; color: #ffff; font-size: 14px;">
+        &copy; 2024 BruFuel. All rights reserved.
+    </div>
+</footer>
 </html>

@@ -11,11 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('faq', 'faq')->name('faq');
+Route::view('/faq', 'faq')->name('faq');
 
-Route::get('/faq', function () {
-    return view('faq');
-})->name('faq');
+Route::view('/customerservice', 'customerservice')->name('customerservice');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
