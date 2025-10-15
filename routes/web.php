@@ -13,6 +13,10 @@ Route::get('/', function () {
 
 Route::view('faq', 'faq')->name('faq');
 
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
