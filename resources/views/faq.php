@@ -77,8 +77,7 @@
             <span class="brufuel-title">BruFuel</span>
             <a href="/" class="home-btn">Dashboard</a>
             <a href="/" class="home-btn">Order</a>
-            <a href="/faq" class="home-btn">FAQ</a>
-            
+            <a href="/faq" class="home-btn">FAQ</a> 
         </header>
         <div style="background: #08073d; min-height: 100vh;">
         <div style="text-align: center; padding: 2rem;">
