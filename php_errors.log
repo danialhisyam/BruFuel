@@ -1,0 +1,10 @@
+[27-Sep-2025 10:00:44 Asia/Brunei] PHP Warning:  require(C:\Users\User\herd\BruFuel/vendor/autoload.php): Failed to open stream: No such file or directory in C:\Users\User\herd\BruFuel\artisan on line 10
+[27-Sep-2025 10:00:44 Asia/Brunei] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\User\herd\BruFuel/vendor/autoload.php' (include_path='.;C:\php\pear') in C:\Users\User\herd\BruFuel\artisan:10
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\herd\BruFuel\artisan on line 10
+[27-Sep-2025 10:00:56 Asia/Brunei] PHP Warning:  require(C:\Users\User\herd\BruFuel/vendor/autoload.php): Failed to open stream: No such file or directory in C:\Users\User\herd\BruFuel\artisan on line 10
+[27-Sep-2025 10:00:56 Asia/Brunei] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\User\herd\BruFuel/vendor/autoload.php' (include_path='.;C:\php\pear') in C:\Users\User\herd\BruFuel\artisan:10
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\herd\BruFuel\artisan on line 10

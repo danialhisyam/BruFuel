@@ -7,44 +7,72 @@ use App\Livewire\Settings\TwoFactor;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+/*
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
+*/
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::view('/', 'CompanySelectection')->name('home');
+// Or: Route::view('/', 'welcome')->name('home');
+
+// Fortify / auth routes
+require __DIR__.'/auth.php';
+
+/*
+|--------------------------------------------------------------------------
+| Legacy .html redirects (so old links still work)
+|--------------------------------------------------------------------------
+*/
+Route::redirect('/driver/trips.html', '/driver/trips', 301);
+Route::redirect('/driver/transactions.html', '/driver/transactions', 301);
+Route::redirect('/driver/index.html', '/driver/dashboard', 301);
+Route::redirect('/driver/dashboard.html', '/driver/dashboard', 301);
+Route::redirect('/driver/login.html', '/driver/login', 301);
+
+/*
+|--------------------------------------------------------------------------
+| Driver Routes (single 'web' guard)
+|--------------------------------------------------------------------------
+*/
+
+// Login (reachable even if already authenticated)
+Route::prefix('driver')->name('driver.')->group(function () {
+    Route::get('/login', [App\Http\Controllers\Driver\AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Driver\AuthController::class, 'login'])->name('login.submit');
+
+    // Protected driver pages
+    Route::middleware('auth')->group(function () {
+        // Menu (dashboard)
+        Route::view('/dashboard', 'driver.dashboard')->name('dashboard');
+
+        // My Trips  -> resources/views/driver/trips/index.blade.php
+        Route::view('/trips', 'driver.trips.index')->name('trips');
+
+        // Transactions -> resources/views/driver/transactions/index.blade.php
+        Route::view('/transactions', 'driver.transactions.index')->name('transactions');
+    });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Authenticated User Routes
+|--------------------------------------------------------------------------
+*/
 
 Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
+    Route::view('dashboard', 'dashboard')->middleware(['verified'])->name('dashboard');
 
+    Route::redirect('settings', 'settings/profile');
     Route::get('settings/profile', Profile::class)->name('settings.profile');
     Route::get('settings/password', Password::class)->name('settings.password');
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
-
-// PUBLIC admin routes
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::view('/login', 'admin.login')->name('login'); // NOT 'LoginPageAdmin.php'
-});
-
-
-// PROTECTED admin routes
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
-    Route::view('/users', 'admin.manage-user')->name('users.index');
-    Route::view('/orders', 'admin.manage-order')->name('order.index');
-
-
-    Route::view('/drivers', 'admin.manage-drivers')->name('drivers.index');
-    Route::view('/payments', 'admin.payment')->name('payment.index');
-});
-
 
     Route::get('settings/two-factor', TwoFactor::class)
         ->middleware(
             when(
                 Features::canManageTwoFactorAuthentication()
-                    && Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword'),
+                && Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword'),
                 ['password.confirm'],
                 [],
             ),
@@ -52,4 +80,3 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         ->name('two-factor.show');
 });
 
-require __DIR__.'/auth.php';
