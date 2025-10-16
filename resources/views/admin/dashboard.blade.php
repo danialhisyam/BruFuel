@@ -19,7 +19,8 @@
     
     <!-- SIDEBAR -->
     <aside class="sidebar w-64 shrink-0 border-r border-slate-800 flex flex-col">
-      <!-- Brand -->
+     
+    <!-- Brand -->
       <div class="flex items-center gap-3 px-5 py-5">
         <div class="grid h-12 w-12 place-items-center rounded-xl bg-white/10">
           <img src="/AdminPics/whiteshell.png" class="h-11 w-12" alt="Shell Icon">
@@ -34,8 +35,8 @@
       <nav class="px-3">
         <ul class="space-y-1">
           <li>
-            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/dashboard">
-              <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+             <a class="flex items-center gap-3 rounded-lg px-3 py-2 bg-indigo-500/15 text-white" href="/admin/dashboard">
+               <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
               Dashboard
             </a>
           </li>
@@ -48,8 +49,8 @@
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-lg px-3 py-2 bg-indigo-500/15 text-white" href="/admin/users">
-              <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+           <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/users">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
               Users
             </a>
           </li>
@@ -64,7 +65,7 @@
           <li>
             <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/payments">
               <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-              Payments
+              payments
             </a>
           </li>
         </ul>
@@ -88,7 +89,8 @@
 
     <!-- MAIN -->
     <main class="flex-1">
-      <!-- Top bar -->
+     
+    <!-- Top bar -->
       <header class="border-b border-slate-800">
         <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
@@ -96,10 +98,9 @@
             <span class="text-xs font-semibold text-slate-900 bg-amber-400/90 px-2 py-0.5 rounded">ADMIN</span>
           </div>
           <div class="flex items-center gap-3">
-            <button class="rounded-full bg-slate-800 p-2 text-slate-300 hover:text-white">
-              <!-- bell -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a6 6 0 0 0-6 6v3.586l-1.707 1.707A1 1 0 0 0 5 15h14a1 1 0 0 0 .707-1.707L18 11.586V8a6 6 0 0 0-6-6zM8 16a4 4 0 0 0 8 0H8z"/></svg>
-            </button>
+             
+            <!-- bell -->
+              </button>
             <img class="h-8 w-8 rounded-full" src="http://static.photos/workspace/200x200/5" alt="Admin">
           </div>
         </div>
@@ -116,7 +117,8 @@
 
       <!-- KPI cards -->
       <section class="grid gap-4 md:grid-cols-4">
-        <!-- Users -->
+        
+      <!-- Users -->
         <div class="card rounded-xl border p-5">
           <div class="flex items-start justify-between">
             <p class="text-sm text-slate-400">Total Users</p>
@@ -188,7 +190,6 @@
       <section class="mt-6 card rounded-xl border p-5">
         <div class="mb-4 flex items-center justify-between">
           <h2 class="text-lg font-semibold">Recent Activity</h2>
-          <a class="text-sm text-indigo-300 hover:text-indigo-200" href="/admin/orders">View All</a>
         </div>
 
         <div class="divide-y divide-slate-800">

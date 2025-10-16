@@ -41,21 +41,22 @@
         <ul class="space-y-1">
           <li>
             <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/dashboard">
-              <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+              
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
               Dashboard
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/orders">
-              <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+            <a class="flex items-center gap-3 rounded-lg px-3 py-2 bg-indigo-500/15 text-white" href="/admin/orders">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
               Orders
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-lg px-3 py-2 bg-indigo-500/15 text-white" href="/admin/users">
-              <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/users">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
               Users
             </a>
           </li>
@@ -70,7 +71,7 @@
           <li>
             <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/payments">
               <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-              Payments
+              payments
             </a>
           </li>
         </ul>
@@ -92,9 +93,10 @@
       </div>
     </aside>
 
-    <!-- MAIN -->
+     <!-- MAIN -->
     <main class="flex-1">
-      <!-- Top bar -->
+     
+    <!-- Top bar -->
       <header class="border-b border-slate-800">
         <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
@@ -102,10 +104,9 @@
             <span class="text-xs font-semibold text-slate-900 bg-amber-400/90 px-2 py-0.5 rounded">ADMIN</span>
           </div>
           <div class="flex items-center gap-3">
-            <button class="rounded-full bg-slate-800 p-2 text-slate-300 hover:text-white">
-              <!-- bell -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a6 6 0 0 0-6 6v3.586l-1.707 1.707A1 1 0 0 0 5 15h14a1 1 0 0 0 .707-1.707L18 11.586V8a6 6 0 0 0-6-6zM8 16a4 4 0 0 0 8 0H8z"/></svg>
-            </button>
+             
+            <!-- bell -->
+              </button>
             <img class="h-8 w-8 rounded-full" src="http://static.photos/workspace/200x200/5" alt="Admin">
           </div>
         </div>
