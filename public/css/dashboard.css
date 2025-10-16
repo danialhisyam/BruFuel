@@ -1,0 +1,159 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #000818;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.dashboard {
+  width: 430px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0;
+  gap: 1.5rem;
+}
+
+/* Header */
+.header {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.brand h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Navigation */
+.nav-bar {
+  width: 90%;
+  background-color: #0f1725;
+  border-radius: 25px;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  background-color: #242b37;
+  width: 60px;
+  height: 60px;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item.active {
+  background-color: #ffe100;
+}
+
+.nav-item img {
+  width: 26px;
+  height: 26px;
+}
+
+/* Cards */
+.card {
+  background-color: #0f1725;
+  border-radius: 20px;
+  width: 90%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.card-content {
+  background-color: rgba(217, 217, 217, 0.1);
+  border-radius: 15px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  opacity: 0.5;
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 12px;
+}
+
+/* Buttons */
+.btn-action {
+  background-color: #760000;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 33px;
+  width: 185px;
+  height: 36px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.btn-action:hover {
+  background-color: #8e0000;
+}
+
+/* Responsive safety */
+@media (max-width: 480px) {
+  .dashboard {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-bar {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
