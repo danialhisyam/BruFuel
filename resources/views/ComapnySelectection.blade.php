@@ -199,10 +199,10 @@
                         window.location.href = '/admin/login';
                         break;
                     case 'customer':
-                        window.location.href = '/admin/login';
+                        window.location.href = '/mobile/dashboard1';
                         break;
                     case 'driver':
-                        window.location.href = '/admin/login';
+                        window.location.href = '/driver/login';
                         break;
                 }
             } else {

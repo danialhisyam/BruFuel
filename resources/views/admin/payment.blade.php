@@ -18,105 +18,96 @@
   <div class="flex min-h-screen">
     
   <!-- Sidebar -->
-    <aside class="sidebar w-64 shrink-0 border-r border-slate-800">
-      <div class="flex items-center gap-3 px-5 py-5">
-        <div class="grid h-12 w-12 place-items-center rounded-xl bg-black-500/20">
-          <img src="/AdminPics/whiteshell.png" class="h-11 w-12" alt="Shell Icon">
-        </div>
-        <div>
-          <p class="text-lg font-semibold">BruFuel</p>
-          <p class="text-xs text-slate-400">Admin</p>
-        </div>
+<aside class="sidebar w-64 shrink-0 border-r border-slate-800 flex flex-col">
+  <div class="flex items-center gap-3 px-5 py-5">
+    <div class="grid h-12 w-12 place-items-center rounded-xl bg-black-500/20">
+      <img src="/AdminPics/whiteshell.png" class="h-11 w-12" alt="Shell Icon">
+    </div>
+    <div>
+      <p class="text-lg font-semibold">BruFuel</p>
+      <p class="text-xs text-slate-400">Admin</p>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="px-3">
+    <ul class="space-y-1">
+      <li>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/dashboard">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/orders">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+          Orders
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/users">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+          Users
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-300 hover:bg-white/5" href="/admin/drivers">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
+          Drivers
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 bg-indigo-500/15 text-white" href="/admin/payments">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+          payments
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Admin User card pinned bottom -->
+  <div class="mt-auto p-4">
+    <div class="flex items-center gap-3 rounded-xl border border-slate-800 bg-[#0b1220] p-3">
+      <div class="grid h-9 w-9 place-items-center rounded-full bg-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5z"/>
+          <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z"/>
+        </svg>
       </div>
-
-     <nav class="px-3">
-        <ul class="space-y-1">
-          <li class="rounded-lg text-slate-300 hover:bg-white/5">
-            <a class="flex items-center justify-between px-3 py-2" href="/admin/dashboard">
-              <span class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-                Dashboard
-
-              </span>
-            </a>
-          </li>
-          <li class="rounded-lg text-slate-300 hover:bg-white/5">
-            <a class="flex items-center justify-between px-3 py-2" href="/admin/orders">
-              <span class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-                Orders
-
-                 </span>
-            </a>
-          </li>
-          <li class="rounded-lg text-slate-300 hover:bg-white/5">
-            <a class="flex items-center justify-between px-3 py-2" href="/admin/users">
-              <span class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-                Users
-
-                   </span>
-            </a>
-          </li>
-          <li class="rounded-lg text-slate-300 hover:bg-white/5">
-            <a class="flex items-center justify-between px-3 py-2" href="/admin/drivers">
-              <span class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-500"></span>
-                Drivers
-
-                   
-     <!-- ...other items... -->
-            </a>
-          </li>
-          <li class="rounded-lg bg-indigo-500/15 text-white">
-            <a class="flex items-center justify-between px-3 py-2" href="/admin/orders">
-              <span class="flex items-center gap-3">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                payments
-        </span>
-      </a>
-    </li>
-  </ul>
-   <div class="mt-auto p-4">
-        <div class="flex items-center gap-3 rounded-xl border border-slate-800 bg-[#0b1220] p-3">
-          <div class="grid h-9 w-9 place-items-center rounded-full bg-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5z"/><path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z"/>
-            </svg>
-          </div>
-          <div class="text-sm">
-            <p class="font-medium">Admin User</p>
-            <p class="text-slate-400">Administrator</p>
-          </div>
-        </div>
+      <div class="text-sm">
+        <p class="font-medium">Admin User</p>
+        <p class="text-slate-400">Administrator</p>
       </div>
-    </aside>
-</nav>
+    </div>
+  </div>
+</aside>
 
 
 
-    <!-- Main -->
-    <main class="flex-1 p-6 md:p-8">
-      <div class="mb-5 flex items-center justify-between">
-      
-   <!-- MAIN -->
+
+     <!-- MAIN -->
     <main class="flex-1">
-      <!-- Top bar -->
+     
+    <!-- Top bar -->
       <header class="border-b border-slate-800">
-        <div class="mx-auto max-w-6xl px-1 py-4 flex items-center justify-between">
+        <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-xl font-bold">BruFuel</span>
             <span class="text-xs font-semibold text-slate-900 bg-amber-400/90 px-2 py-0.5 rounded">ADMIN</span>
           </div>
           <div class="flex items-center gap-3">
-            <button class="rounded-full bg-slate-800 p-2 text-slate-300 hover:text-white">
-              <i data-feather="bell"></i>
-            </button>
+             
+            <!-- bell -->
+              </button>
+            <img class="h-8 w-8 rounded-full" src="http://static.photos/workspace/200x200/5" alt="Admin">
           </div>
         </div>
+      </header>
+
+      <!-- Main -->
+        <main class="overflow-y-auto p-3">
         <h1 class="text-2xl font-bold">Payment Overview</h1>
         <p class="text-sm text-slate-400">Welcome back! Here's what's happening with your payments today.</p>
-
       <section class="p-6 bg-[#0b1321] min-h-screen text-white font-sans">
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">

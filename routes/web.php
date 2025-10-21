@@ -47,6 +47,59 @@ Route::prefix('admin')->name('admin.')->group(function () {
         )
         ->name('two-factor.show');
 
+
+
+//Drivers
+/*
+|--------------------------------------------------------------------------
+| Legacy .html redirects (so old links still work)
+|--------------------------------------------------------------------------
+*/
+Route::redirect('/driver/trips.html', '/driver/trips', 301);
+Route::redirect('/driver/transactions.html', '/driver/transactions', 301);
+Route::redirect('/driver/index.html', '/driver/dashboard', 301);
+Route::redirect('/driver/dashboard.html', '/driver/dashboard', 301);
+Route::redirect('/driver/login.html', '/driver/login', 301);
+
+/*
+|--------------------------------------------------------------------------
+| Driver Routes (single 'web' guard)
+|--------------------------------------------------------------------------
+*/
+
+// Login (reachable even if already authenticated)
+Route::prefix('driver')->name('driver.')->group(function () {
+    Route::get('/login', [App\Http\Controllers\Driver\AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Driver\AuthController::class, 'login'])->name('login.submit');
+
+    // Protected driver pages
+        // Menu (dashboard)
+        Route::view('/dashboard', 'driver.dashboard')->name('dashboard');
+
+        // My Trips  -> resources/views/driver/trips/index.blade.php
+        Route::view('/trips', 'driver.trips.index')->name('trips');
+
+        // Transactions -> resources/views/driver/transactions/index.blade.php
+        Route::view('/transactions', 'driver.transactions.index')->name('transactions');
+    });
+
+    
+Route::prefix('mobile')->name('mobile.')->group(function () {
+Route::get('/dashboardlogged', function () {
+    return view('mobile.screens.dashboardlogged');
+})->name('dashboard.logged');
+
+Route::get('/dashboard1', function () {
+    return view('mobile.screens.dashboard1');
+})->name('dashboard1');
+  });
+
+
+    // Protected driver pages
+        // Menu (dashboard)
+        Route::view('/dashboard', 'driver.dashboard')->name('dashboard');
+
+
 // Landing page (role selection portal)
 Route::get('/', function () {
     return view('ComapnySelectection'); // your blade file e.g. resources/views/role-selection.blade.php
